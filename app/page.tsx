@@ -41,17 +41,16 @@ function CustomTable({ rows = {} }: { rows: Record<string, React.ReactNode> }) {
 }
 
 export default function App() {
+  const [result, setResult] = useState("Not yet");
+
   return (
+    <p>{result}</p>
     <CustomTable
       rows={{
         hello: (
           <Button
             variant="contained"
-            onClick={() => {
-              const p = document.createElement('p');
-              p.textContent = 'clicked!';
-              document.body.appendChild(p);
-            }}
+            onClick={e => setResult("success!")}
           >
             Click me
           </Button>
