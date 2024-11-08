@@ -44,18 +44,20 @@ export default function App() {
   const [result, setResult] = useState("Not yet");
 
   return (
-    <p>{result}</p>
-    <CustomTable
-      rows={{
-        hello: (
-          <Button
-            variant="contained"
-            onClick={e => setResult("success!")}
-          >
-            Click me
-          </Button>
-        ),
-      }}
-    />
+    <div>
+      <p>{result}</p>
+      <CustomTable
+        rows={{
+          hello: (
+            <Button
+              variant="contained"
+              onClick={e => setResult("success!")}
+            >
+              Click me
+            </Button>
+          ),
+        }}
+      />
+    </div>
   );
 }
