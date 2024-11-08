@@ -40,10 +40,21 @@ function CustomTable({ rows = {} }: { rows: Record<string, React.ReactNode> }) {
 
 export default function App() {
   return (
-    <CustomTable rows={{"hello": <Button variant="contained" onClick={() => {
-      const p = document.createElement('p');
-      p.textContent = "clicked!";
-      document.body.appendChild(p);
-    }}></Button>>}} />
+    <CustomTable
+      rows={{
+        hello: (
+          <Button
+            variant="contained"
+            onClick={() => {
+              const p = document.createElement('p');
+              p.textContent = 'clicked!';
+              document.body.appendChild(p);
+            }}
+          >
+            Click me
+          </Button>
+        ),
+      }}
+    />
   );
 }
