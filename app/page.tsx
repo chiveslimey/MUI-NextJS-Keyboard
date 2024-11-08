@@ -8,7 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 
-function CustomTable({ data = {} }: { data: Record<string, React.ReactNode> }) {
+function CustomTable({ rows = {} }: { rows: Record<string, React.ReactNode> }) {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -19,16 +19,16 @@ function CustomTable({ data = {} }: { data: Record<string, React.ReactNode> }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.map((row) => (
+          {Object.keys(rows).map((key) => (
             <TableRow
-              key={row.name}
+              key={key}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row.name}
+                {key}
               </TableCell>
               <TableCell>
-                <Button variant="contained">View Problem</Button>
+                {rows[key]}
               </TableCell>
             </TableRow>
           ))}
@@ -40,6 +40,10 @@ function CustomTable({ data = {} }: { data: Record<string, React.ReactNode> }) {
 
 export default function App() {
   return (
-    <CustomTable data={{"hello": <Button />}} />
+    <CustomTable rows={{"hello": <Button variant="contained" onClick={() => {
+      const p = document.createElement('p');
+      p.textContent = "clicked!";
+      document.body.appendChild(p);
+    }}></Button>>}} />
   );
 }
