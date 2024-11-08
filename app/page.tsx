@@ -51,7 +51,7 @@ export default function App() {
           hello: (
             <Button
               variant="contained"
-              onClick={e => setResult("success!")}
+              onClick={() => setResult("success!")}
             >
               Click me
             </Button>
