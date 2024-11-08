@@ -41,7 +41,7 @@ function CustomTable({ rows = {} }: { rows: Record<string, React.ReactNode> }) {
 }
 
 export default function App() {
-  const [result, setResult] = useState("Not yet");
+  const [result, setResult] = React.useState("Not yet");
 
   return (
     <div>
