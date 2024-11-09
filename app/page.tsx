@@ -12,8 +12,8 @@ import Button from '@mui/material/Button';
 
 function Table ({ rows = {} }: { rows: Record<string, ReactNode> }) {
   return (
-    <TableContainer component={Paper}>
-      <RawTable sx={{ width: '75%' }}>
+    <TableContainer component={Paper} sx={{ bgcolor: '#f4f5f6' }}>
+      <RawTable sx={{ width: '100%' }}>
         
         <TableHead>
           <TableRow>
@@ -25,10 +25,7 @@ function Table ({ rows = {} }: { rows: Record<string, ReactNode> }) {
         <TableBody>
           {
             Object.keys(rows).map((key) => (
-              <TableRow
-                key={key}
-                sx={{ border: '1px solid blue' }}
-              >
+              <TableRow key={key}>
                 <TableCell component="th" scope="row">
                   {key}
                 </TableCell>
