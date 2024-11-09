@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import * as React from 'react';
-import Table from '@mui/material/Table';
+import { ReactNode } from 'react';
+import RawTable from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
@@ -10,54 +10,50 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 
-function CustomTable({ rows = {} }: { rows: Record<string, React.ReactNode> }) {
+export default function Table ({ rows = {} }: { rows: Record<string, Button> }) {
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <RawTable sx={{ width: '75%' }}>
+        
         <TableHead>
           <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell>Problem</TableCell>
+            <TableCell>問題名</TableCell>
+            <TableCell>問題テンプレート</TableCell>
           </TableRow>
         </TableHead>
+        
         <TableBody>
-          {Object.keys(rows).map((key) => (
-            <TableRow
-              key={key}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {key}
-              </TableCell>
-              <TableCell>
-                {rows[key]}
-              </TableCell>
-            </TableRow>
-          ))}
+          {
+            Object.keys(rows).map((key) => (
+              <TableRow
+                key={key}
+                sx={{ border: '1px solid blue' }}
+              >
+                <TableCell component="th" scope="row">
+                  {key}
+                </TableCell>
+                <TableCell>
+                  {rows[key]}
+                </TableCell>
+              </TableRow>
+            ))
+          }
         </TableBody>
-      </Table>
+      </RawTable>
     </TableContainer>
   );
 }
 
 export default function App() {
-  const [result, setResult] = React.useState("Not yet");
-
   return (
-    <div>
-      <p>{result}</p>
-      <CustomTable
-        rows={{
-          hello: (
-            <Button
-              variant="contained"
-              onClick={() => setResult("success!")}
-            >
-              Click me
-            </Button>
-          ),
-        }}
-      />
-    </div>
-  );
+    <Table
+      rows={{ hello: (
+        <Button
+          onClick={() => alert('hello!')}
+        >
+          Click me!
+        </Button>
+      )}}
+    />
+  )
 }
