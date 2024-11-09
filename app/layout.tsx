@@ -6,7 +6,7 @@ import { Inter } from "next/font/google";
 import { Box, CssBaseline, Toolbar } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 
-import "./global.css";
+import "./globals.css";
 
 
 const inter = Inter({ subsets: ["latin"] });
