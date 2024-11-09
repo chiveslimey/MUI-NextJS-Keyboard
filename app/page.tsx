@@ -29,7 +29,7 @@ function Table ({ rows = {} }: { rows: Record<string, ReactNode> }) {
                 <TableCell component="th" scope="row">
                   {key}
                 </TableCell>
-                <TableCell>
+                <TableCell sx={{ left: '50%' }}>
                   {rows[key]}
                 </TableCell>
               </TableRow>
