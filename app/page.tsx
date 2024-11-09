@@ -17,8 +17,8 @@ function Table ({ rows = {} }: { rows: Record<string, ReactNode> }) {
         
         <TableHead>
           <TableRow>
-            <TableCell>問題名</TableCell>
-            <TableCell>問題テンプレート</TableCell>
+            <TableCell sx={{ width: '50%' }}>問題名</TableCell>
+            <TableCell sx={{ width: '50%' }}>問題テンプレート</TableCell>
           </TableRow>
         </TableHead>
         
@@ -26,10 +26,10 @@ function Table ({ rows = {} }: { rows: Record<string, ReactNode> }) {
           {
             Object.keys(rows).map((key) => (
               <TableRow key={key}>
-                <TableCell component="th" scope="row">
+                <TableCell component="th" scope="row" sx={{ width: '50%' }}>
                   {key}
                 </TableCell>
-                <TableCell sx={{ left: '50%' }}>
+                <TableCell sx={{ width: '50%' }}>
                   {rows[key]}
                 </TableCell>
               </TableRow>
