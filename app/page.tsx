@@ -12,7 +12,7 @@ import Button from '@mui/material/Button';
 
 function Table ({ rows = {} }: { rows: Record<string, ReactNode> }) {
   return (
-    <TableContainer component={Paper} sx={{ overflowY: 'auto' }}>
+    <TableContainer component={Paper} sx={{ minHeight: '90%' }}>
       <RawTable sx={{ width: '100%' }}>
         
         <TableHead>
