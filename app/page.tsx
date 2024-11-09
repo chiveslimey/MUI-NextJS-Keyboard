@@ -10,7 +10,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 
-export default function Table ({ rows = {} }: { rows: Record<string, Button> }) {
+function Table ({ rows = {} }: { rows: Record<string, Button> }) {
   return (
     <TableContainer component={Paper}>
       <RawTable sx={{ width: '75%' }}>
