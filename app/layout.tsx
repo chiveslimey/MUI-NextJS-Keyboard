@@ -3,7 +3,6 @@ import { ReactNode } from 'react';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import { Box, CssBaseline, Toolbar } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 
 import "./globals.css";
