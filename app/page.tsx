@@ -34,8 +34,6 @@ function Keyboard(props: {
                          direction="row" 
                          sx={{ 
                              display: 'flex',
-                             justifyContent: 'space-around',
-                             margin: "5%",
                          }} 
                          key={`[${keys}]-${idx}`}
                         >
@@ -49,6 +47,7 @@ function Keyboard(props: {
                                          sx={{ 
                                              color: buttonColor === "white" ? "black" : "white", 
                                              bgcolor: buttonColor,
+                                             alignSelf: 'stretch',
                                              margin: "5%",
                                          }}
                                         >
