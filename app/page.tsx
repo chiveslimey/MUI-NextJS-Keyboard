@@ -46,7 +46,7 @@ export default function App() {
   return (
     <div>
         <p>{msg}</p>
-        <Keyboard layout={[['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i']]}, onClick={(key) => setMsg((prev) => prev + key)} />
+        <Keyboard layout={[['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i']]}, onKeyPress={(key) => setMsg((prev) => prev + key)} />
     </div>
   );
 }
