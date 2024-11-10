@@ -23,7 +23,7 @@ function Keyboard(props: {
              bottom: 0, 
              height: "50%", 
              display: 'flex', 
-             justifyContent: 'stretch', }}
+             justifyContent: 'space-around', }}
         >
             {
                 props.layout.map(
@@ -32,7 +32,7 @@ function Keyboard(props: {
                          direction="row" 
                          sx={{ 
                              display: 'flex',
-                             justifyContent: 'stretch',
+                             justifyContent: 'space-around',
                          }} 
                          key={idx}
                         >
