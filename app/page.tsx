@@ -58,7 +58,7 @@ function Keyboard(props: {
                     )
                 )
             }
-        </Box>
+        </Stack>
     );
 }
 
