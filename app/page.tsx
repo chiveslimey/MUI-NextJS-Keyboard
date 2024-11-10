@@ -25,7 +25,6 @@ function Keyboard(props: {
              width: "100%",
              display: 'flex', 
              justifyContent: 'space-around',
-             margin: "5%",
          }}
         >
             {
@@ -50,6 +49,7 @@ function Keyboard(props: {
                                          sx={{ 
                                              color: buttonColor === "white" ? "black" : "white", 
                                              bgcolor: buttonColor,
+                                             margin: "5%",
                                          }}
                                         >
                                              {key} 
