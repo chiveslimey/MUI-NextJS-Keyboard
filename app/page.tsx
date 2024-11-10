@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
@@ -16,14 +15,16 @@ function Keyboard(props: {
     const buttonColor = isDarkMode ? "#6c6d6e" : "white";
     
     return (
-        <Box 
+        <Stack 
+         direction="column"
          sx={{ 
              bgcolor, 
              position: 'fixed', 
              bottom: 0, 
              height: "50%", 
              display: 'flex', 
-             justifyContent: 'space-around', }}
+             justifyContent: 'space-around', 
+         }}
         >
             {
                 props.layout.map(
