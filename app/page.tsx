@@ -25,6 +25,7 @@ function Keyboard(props: {
              width: "100%",
              display: 'flex', 
              justifyContent: 'space-around', 
+             alignItems: 'stretch', 
          }}
         >
             {
@@ -37,7 +38,7 @@ function Keyboard(props: {
                              justifyContent: 'space-around',
                              alignItems: 'stretch',
                          }} 
-                         key={idx}
+                         key={`[${keys}]-${idx}`}
                         >
                             {
                                 keys.map(
@@ -45,11 +46,11 @@ function Keyboard(props: {
                                         <Button
                                          onClick={() => props.onKeyPress(key)}
                                          variant="contained"
+                                         key={`${key}-${idx}`}
                                          sx={{ 
                                              color: buttonColor === "white" ? "black" : "white", 
                                              bgcolor: buttonColor,
                                          }}
-                                         key={idx}
                                         >
                                              {key} 
                                         </Button>
