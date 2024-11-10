@@ -9,6 +9,24 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import React from 'react';
+
+function ColorScheme(props: { children: ReactNode }) => {
+  const mode = useMediaQuery('(prefers-color-scheme: dark)') ? 'dark' : 'light';
+  const theme = createTheme({
+    palette: { mode },
+  });
+
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      {props.children}
+    </ThemeProvider>
+  );
+};
 
 function Table ({ rows = {} }: { rows: Record<string, ReactNode> }) {
   return (
@@ -43,14 +61,16 @@ function Table ({ rows = {} }: { rows: Record<string, ReactNode> }) {
 
 export default function App() {
   return (
-    <Table
-      rows={{ hello: (
-        <Button
-          onClick={() => alert('hello!')}
-        >
-          Click me!
-        </Button>
-      )}}
-    />
+    <ColorScheme>
+      <Table
+        rows={{ hello: (
+          <Button
+            onClick={() => alert('hello!')}
+          >
+            Click me!
+          </Button>
+        )}}
+      />
+    </ColorScheme>
   )
 }
