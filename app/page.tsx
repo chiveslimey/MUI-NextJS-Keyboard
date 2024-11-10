@@ -20,7 +20,7 @@ function Keyboard(props: {
             {
                 props.layout.map(
                     (keys, idx) => (
-                        <Stack direction="row" sx={{ height: `${ 100 / props.layout.length }%`}} key={idx}>
+                        <Stack direction="row" sx={{ height: `${ 100 / props.layout.length }%`, display: 'flex' }} key={idx}>
                             {
                                 keys.map(
                                     (key, idx) => (
@@ -29,7 +29,8 @@ function Keyboard(props: {
                                          variant="contained"
                                          sx={{ 
                                              color: buttonColor === "white" ? "black" : "white", 
-                                             bgcolor: buttonColor 
+                                             bgcolor: buttonColor,
+                                             justifyContent: 'stretch',
                                          }}
                                          key={idx}
                                         >
