@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
+// import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 
 import "./globals.css";
 
@@ -19,9 +19,9 @@ export default function RootLayout(props: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AppRouterCacheProvider>
+        //<AppRouterCacheProvider>
           {props.children}
-        </AppRouterCacheProvider>
+        //</AppRouterCacheProvider>
       </body>
     </html>
   );
