@@ -22,6 +22,7 @@ function Keyboard(props: {
              position: 'fixed', 
              bottom: 0, 
              height: "50%", 
+             width: "100%",
              display: 'flex', 
              justifyContent: 'space-around', 
          }}
