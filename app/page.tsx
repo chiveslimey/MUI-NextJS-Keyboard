@@ -20,7 +20,7 @@ function Keyboard(props: {
             {
                 props.layout.map(
                     (keys, idx) => (
-                        <Stack direction="row" sx={{ height: `${ 100 / props.layout.length }%` key={idx} }}>
+                        <Stack direction="row" sx={{ height: `${ 100 / props.layout.length }%`}} key={idx}>
                             {
                                 keys.map(
                                     (key, idx) => (
