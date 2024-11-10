@@ -30,7 +30,7 @@ function ColorScheme(props: { children: ReactNode }) {
 
 function Table ({ rows = {} }: { rows: Record<string, ReactNode> }) {
   return (
-    <TableContainer component={Paper} sx={{ minHeight: '90%' }}>
+    <TableContainer component={Paper} sx={{ minHeight: '90%', bgcolor: 'red' }}>
       <RawTable sx={{ width: '100%' }}>
         
         <TableHead>
