@@ -27,8 +27,10 @@ function Keyboard(props: {
                                         <Button
                                          onClick={() => props.onKeyPress(key)}
                                          variant="contained"
-                                         color={ buttonColor === "white" ? "black" : "white" }
-                                         sx={{ bgcolor: buttonColor }}
+                                         sx={{ 
+                                             color: buttonColor === "white" ? "black" : "white", 
+                                             bgcolor: buttonColor 
+                                         }}
                                          key={idx}
                                         >
                                              {key} 
