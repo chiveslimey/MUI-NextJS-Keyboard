@@ -44,9 +44,9 @@ export default function App() {
   const [msg, setMsg] = useState('');
   
   return (
-    <>
+    <div>
         <p>{msg}</p>
-        <Keyboard layout={[['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i']]}, onClick={setMsg} />
-    </>
-  )
+        <Keyboard layout={[['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i']]}, onClick={(key) => setMsg((prev) => prev + key)} />
+    </div>
+  );
 }
