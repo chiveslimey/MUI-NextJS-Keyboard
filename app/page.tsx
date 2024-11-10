@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 
@@ -18,16 +19,17 @@ function Keyboard(props: {
         <Box sx={{ bgcolor, position: 'fixed', bottom: 0, height: "50%" }}>
             {
                 props.layout.map(
-                    (keys) => (
-                        <Stack direction="row" sx={{ height: `${ 100 / props.layout.length }%` }}>
+                    (keys, idx) => (
+                        <Stack direction="row" sx={{ height: `${ 100 / props.layout.length }%` key={idx} }}>
                             {
                                 keys.map(
-                                    (key) => (
+                                    (key, idx) => (
                                         <Button
                                          onClick={() => props.onKeyPress(key)}
                                          variant="contained"
                                          color={ buttonColor === "white" ? "#black" : "white" }
                                          sx={{ bgcolor: buttonColor }}
+                                         key={idx}
                                         >
                                              {key} 
                                         </Button>
