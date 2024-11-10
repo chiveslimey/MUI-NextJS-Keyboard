@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -43,6 +44,9 @@ export default function App() {
   const [msg, setMsg] = useState('');
   
   return (
-    <Keyboard layout={[['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i']]}, onClick={setMsg} />
+    <>
+        <p>{msg}</p>
+        <Keyboard layout={[['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i']]}, onClick={setMsg} />
+    </>
   )
 }
