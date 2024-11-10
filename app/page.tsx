@@ -14,7 +14,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import React from 'react';
 
-function ColorScheme(props: { children: ReactNode }) => {
+function ColorScheme(props: { children: ReactNode }) {
   const mode = useMediaQuery('(prefers-color-scheme: dark)') ? 'dark' : 'light';
   const theme = createTheme({
     palette: { mode },
