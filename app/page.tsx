@@ -16,11 +16,26 @@ function Keyboard(props: {
     const buttonColor = isDarkMode ? "#6c6d6e" : "white";
     
     return (
-        <Box sx={{ bgcolor, position: 'fixed', bottom: 0, height: "50%" }}>
+        <Box 
+         sx={{ 
+             bgcolor, 
+             position: 'fixed', 
+             bottom: 0, 
+             height: "50%", 
+             display: 'flex', 
+             justifyContent: 'stretch', }}
+        >
             {
                 props.layout.map(
                     (keys, idx) => (
-                        <Stack direction="row" sx={{ height: `${ 100 / props.layout.length }%`, display: 'flex' }} key={idx}>
+                        <Stack 
+                         direction="row" 
+                         sx={{ 
+                             display: 'flex',
+                             justifyContent: 'stretch',
+                         }} 
+                         key={idx}
+                        >
                             {
                                 keys.map(
                                     (key, idx) => (
@@ -30,7 +45,6 @@ function Keyboard(props: {
                                          sx={{ 
                                              color: buttonColor === "white" ? "black" : "white", 
                                              bgcolor: buttonColor,
-                                             justifyContent: 'stretch',
                                          }}
                                          key={idx}
                                         >
