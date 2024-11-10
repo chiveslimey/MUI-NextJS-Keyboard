@@ -24,8 +24,7 @@ function Keyboard(props: {
              height: "50%", 
              width: "100%",
              display: 'flex', 
-             justifyContent: 'space-around', 
-             alignItems: 'stretch', 
+             justifyContent: 'stretch', 
          }}
         >
             {
@@ -35,8 +34,7 @@ function Keyboard(props: {
                          direction="row" 
                          sx={{ 
                              display: 'flex',
-                             justifyContent: 'space-around',
-                             alignItems: 'stretch',
+                             justifyContent: 'stretch',
                          }} 
                          key={`[${keys}]-${idx}`}
                         >
