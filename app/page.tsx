@@ -35,6 +35,7 @@ function Keyboard(props: {
                          sx={{ 
                              display: 'flex',
                              justifyContent: 'space-around',
+                             alignItems: 'stretch',
                          }} 
                          key={idx}
                         >
