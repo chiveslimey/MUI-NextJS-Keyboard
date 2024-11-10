@@ -19,9 +19,7 @@ export default function RootLayout(props: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        //<AppRouterCacheProvider>
           {props.children}
-        //</AppRouterCacheProvider>
       </body>
     </html>
   );
