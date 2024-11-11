@@ -42,17 +42,18 @@ function Keyboard(props: {
                container
                spacing={2}
                size={12}
+               difection="row"
                key={`[${keys}]-${idx}`}
               >
                 {
                   keys.map((key, idx) => (
-                    <Grid size={12} key={`${key}-${idx}`} >
+                    <Grid size="grow" key={`${key}-${idx}`} >
                       <Button
                        onClick={() => props.onKeyPress(key)}
                        variant="contained"
                        key={`btn-${key}-${idx}`}
                        sx={{ 
-                         color: buttonColor === "white" ? "black" : "white", 
+                        color: buttonColor === "white" ? "black" : "white", 
                          bgcolor: buttonColor,
                        }}
                       />
