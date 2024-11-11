@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
@@ -15,7 +15,7 @@ function Keyboard(props: {
     const buttonColor = isDarkMode ? "#6c6d6e" : "white";
 
     return (
-      <Stack
+      <Box
        direction="column"
        spacing={2}
        sx={{
@@ -24,8 +24,6 @@ function Keyboard(props: {
          height: '50vh',
          width: '100vw',
          bottom: 0,
-         justifyContent: "space-around",
-         alignItems: "baseline",
        }}
       >
         <Grid 
@@ -59,7 +57,7 @@ function Keyboard(props: {
             ))
           }
         </Grid>
-    </Stack>
+    </Box>
   );
 }
 
