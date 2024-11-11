@@ -22,6 +22,7 @@ function Keyboard(props: {
          height: '50vh',
          width: '100vw',
          bottom: 0,
+         gridAutoRows: 'max-content',
        }}
       >
         <Grid 
@@ -35,11 +36,15 @@ function Keyboard(props: {
                container
                spacing={2}
                size={12}
+               sx={{
+                   height: `${ 100 / keys.length }%`,
+                   gridAutoRows: 'max-content',
+               }}
                key={`[${keys}]-${idx}`}
               >
                 {
                   keys.map((key, idx) => (
-                    <Grid size="grow" key={`${key}-${idx}`}>
+                    <Grid size="grow" key={`${key}-${idx}`} >
                       <Button
                        onClick={() => props.onKeyPress(key)}
                        variant="contained"
