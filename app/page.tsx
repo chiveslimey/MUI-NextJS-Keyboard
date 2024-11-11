@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid2';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
@@ -15,8 +15,8 @@ function Keyboard(props: {
     const buttonColor = isDarkMode ? "#6c6d6e" : "white";
 
     return (
-      <Box 
-       flexDirection="column"
+      <Stack
+       direction="column"
        sx={{ 
          bgcolor, 
          position: 'fixed', 
@@ -56,7 +56,7 @@ function Keyboard(props: {
             ))
           }
         </Grid>
-    </Box>
+    </Stack>
   );
 }
 
