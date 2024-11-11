@@ -40,7 +40,6 @@ function Keyboard(props: {
                container
                spacing={2}
                size={12}
-               direction="column"
                key={`[${keys}]-${idx}`}
                sx={{
                  justifyContent: "space-around",
