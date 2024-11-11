@@ -35,7 +35,7 @@ function Keyboard(props: {
                container
                spacing={2}
                size="grow"
-               key=`[${keys}]-${idx}`
+               key={`[${keys}]-${idx}`}
               >
                 {
                   keys.map((key, idx) => (
@@ -50,10 +50,10 @@ function Keyboard(props: {
                        }}
                       />
                     </Grid>
-                  ));
+                  ))
                 }
               </Grid>
-            ));
+            ))
           }
         </Grid>
     </Box>
