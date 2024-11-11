@@ -28,6 +28,11 @@ function Keyboard(props: {
          container
          spacing={2}
          width='100vw'
+         direction="column"
+         sx={{
+           justifyContent: "space-around",
+           alignItems: "stretch",
+         }}
         >
           {
             props.layout.map((keys, idx) => (
@@ -35,10 +40,12 @@ function Keyboard(props: {
                container
                spacing={2}
                size={12}
-               sx={{
-                   height: `${ 100 / keys.length }%`,
-               }}
+               direction="column"
                key={`[${keys}]-${idx}`}
+               sx={{
+                 justifyContent: "space-around",
+                 alignItems: "stretch",
+               }}
               >
                 {
                   keys.map((key, idx) => (
