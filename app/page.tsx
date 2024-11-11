@@ -42,7 +42,7 @@ function Keyboard(props: {
                container
                spacing={2}
                size={12}
-               difection="row"
+               direction="row"
                key={`[${keys}]-${idx}`}
               >
                 {
