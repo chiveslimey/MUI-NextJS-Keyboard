@@ -34,7 +34,7 @@ function Keyboard(props: {
               <Grid
                container
                spacing={2}
-               size="grow"
+               size={12}
                key={`[${keys}]-${idx}`}
               >
                 {
