@@ -22,6 +22,8 @@ function Keyboard(props: {
          height: '50vh',
          width: '100vw',
          bottom: 0,
+         display: 'flex',
+         justifyContent: 'space-around',
        }}
       >
         <Grid 
@@ -56,6 +58,7 @@ function Keyboard(props: {
                        variant="contained"
                        key={`btn-${key}-${idx}`}
                        sx={{ 
+                         flex: 1,
                          color: buttonColor === "white" ? "black" : "white", 
                          bgcolor: buttonColor,
                        }}
