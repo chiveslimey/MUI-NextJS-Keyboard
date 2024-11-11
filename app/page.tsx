@@ -22,21 +22,21 @@ function Keyboard(props: {
          height: '50vh',
          width: '100vw',
          bottom: 0,
+         flexGrow=1,
        }}
       >
         <Grid 
          container
-         width='100vw'
          direction="column"
-         columns={1}
          spacing={2}
+         width="100vw"
         >
           {
             props.layout.map((keys, idx) => (
               <Grid
                container
                spacing={2}
-               size="grow"
+               size={12}
                key={`[${keys}]-${idx}`}
               >
                 {
