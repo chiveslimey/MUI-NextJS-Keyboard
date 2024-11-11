@@ -39,16 +39,19 @@ function Keyboard(props: {
               >
                 {
                   keys.map((key, idx) => (
-                    <Grid size="auto" key={`${key}-${idx}`} >
+                    <Grid size="grow" key={`${key}-${idx}`} >
                       <Button
                        onClick={() => props.onKeyPress(key)}
                        variant="contained"
                        key={`btn-${key}-${idx}`}
+                       fullWidth
                        sx={{ 
                         color: buttonColor === "white" ? "black" : "white", 
-                         bgcolor: buttonColor,
+                        bgcolor: buttonColor,
                        }}
-                      />
+                      >
+                        {key}
+                      </Button>
                     </Grid>
                   ))
                 }
