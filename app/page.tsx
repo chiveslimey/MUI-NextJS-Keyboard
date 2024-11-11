@@ -30,7 +30,7 @@ function Keyboard(props: {
          direction="column"
          spacing={2}
          sx={{
-           width="100vw",
+           width: "100vw",
            display: "flex",
            justifyContent: "center",
            alignItems: "center",
