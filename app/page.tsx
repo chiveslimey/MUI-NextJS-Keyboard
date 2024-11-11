@@ -17,14 +17,16 @@ function Keyboard(props: {
     return (
       <Stack
        direction="column"
-       sx={{ 
-         bgcolor, 
-         position: 'fixed', 
-         bottom: 0, 
-         height: "50%", 
-         width: "100%",
-      }}
-     >
+       spacing={2}
+       sx={{
+         bgcolor,
+         position: 'fixed',
+         height: '50%',
+         width: '100%',
+         justifyContent: "space-around",
+         alignItems: "stretch",
+       }}
+      >
         <Grid 
          container
          spacing={2}
