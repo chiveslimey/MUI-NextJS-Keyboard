@@ -21,7 +21,7 @@ function Keyboard(props: {
        sx={{
          bgcolor,
          position: 'fixed',
-         height: '5vw%',
+         height: '50vh',
          width: '100vw',
          bottom: 0,
          justifyContent: "space-around",
