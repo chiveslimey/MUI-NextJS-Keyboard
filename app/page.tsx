@@ -27,6 +27,7 @@ function Keyboard(props: {
         <Grid 
          container
          spacing={2}
+         width='100vw'
         >
           {
             props.layout.map((keys, idx) => (
