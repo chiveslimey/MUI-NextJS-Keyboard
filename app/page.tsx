@@ -50,7 +50,7 @@ function Keyboard(props: {
               >
                 {
                   keys.map((key, idx) => (
-                    <Grid size="grow" height="100%" key={`${key}-${idx}`} >
+                    <Grid size="grow" key={`${key}-${idx}`} >
                       <Button
                        onClick={() => props.onKeyPress(key)}
                        variant="contained"
