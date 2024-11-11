@@ -16,8 +16,6 @@ function Keyboard(props: {
 
     return (
       <Box
-       direction="column"
-       spacing={2}
        sx={{
          bgcolor,
          position: 'fixed',
