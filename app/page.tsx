@@ -22,7 +22,7 @@ function Keyboard(props: {
          height: '50vh',
          width: '100vw',
          bottom: 0,
-         flexGrow=1,
+         flexGrow: 1,
        }}
       >
         <Grid 
