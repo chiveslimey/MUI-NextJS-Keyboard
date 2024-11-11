@@ -1,13 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import Button from '@mui/material/Button';
+import RawButton from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 
-const Button = styled(Button)(({ theme }) => ({
+const Button = styled(RawButton)(({ theme }) => ({
   color: "black",
   backgroundColor: buttonColor,
   ...theme.typography.body2,
