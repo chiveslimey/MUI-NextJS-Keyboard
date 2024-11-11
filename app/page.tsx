@@ -22,19 +22,12 @@ function Keyboard(props: {
          height: '50vh',
          width: '100vw',
          bottom: 0,
-         flexGrow: 1,
        }}
       >
         <Grid 
          container
          direction="column"
          spacing={2}
-         sx={{
-           width: "100vw",
-           display: "flex",
-           justifyContent: "center",
-           alignItems: "center",
-         }}
         >
           {
             props.layout.map((keys, idx) => (
@@ -42,12 +35,11 @@ function Keyboard(props: {
                container
                spacing={2}
                size={12}
-               direction="row"
                key={`[${keys}]-${idx}`}
               >
                 {
                   keys.map((key, idx) => (
-                    <Grid size="grow" key={`${key}-${idx}`} >
+                    <Grid size="auto" key={`${key}-${idx}`} >
                       <Button
                        onClick={() => props.onKeyPress(key)}
                        variant="contained"
