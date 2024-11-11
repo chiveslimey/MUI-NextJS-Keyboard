@@ -1,15 +1,16 @@
 'use client';
 
 import { useState } from 'react';
+import { styled } from '@mui/material/styles';
 import RawButton from '@mui/material/Button';
-import Box from '@mui/material/Box';
+import RawBox from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 
 const Button = styled(RawButton)(({ theme }) => ({
   color: "black",
-  backgroundColor: buttonColor,
+  backgroundColor: "white",
   ...theme.typography.body2,
   padding: theme.spacing(2),
   textAlign: 'center',
@@ -20,13 +21,20 @@ const Button = styled(RawButton)(({ theme }) => ({
   }),
 }));
 
+const Box = styled(Raw)(({ theme }) => ({
+  backgroundColor: "#d1d2d3",
+  ...theme.typography.body2,
+    
+  ...theme.applyStyles('dark', {
+    color: "white",
+    backgroundColor: '#6d6d6d',
+  }),
+}));
+
 function Keyboard(props: {
     layout: Array<Array<string>>,
     onKeyPress: (key: string) => void,
 }) {
-    const isDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-    const bgcolor = isDarkMode ? '#6d6d6d' : '#d1d2d3';
-
     return (
       <Box
        sx={{
