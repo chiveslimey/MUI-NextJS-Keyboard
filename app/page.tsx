@@ -21,10 +21,11 @@ function Keyboard(props: {
        sx={{
          bgcolor,
          position: 'fixed',
-         height: '50%',
-         width: '100%',
+         height: '5vw%',
+         width: '100vw',
+         bottom: 0,
          justifyContent: "space-around",
-         alignItems: "stretch",
+         alignItems: "baseline",
        }}
       >
         <Grid 
