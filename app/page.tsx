@@ -22,8 +22,6 @@ function Keyboard(props: {
          height: '50vh',
          width: '100vw',
          bottom: 0,
-         display: 'flex',
-         justifyContent: 'space-around',
        }}
       >
         <Grid 
@@ -31,10 +29,6 @@ function Keyboard(props: {
          spacing={2}
          width='100vw'
          direction="column"
-         sx={{
-           display: 'flex',
-           alignItems: "stretch",
-         }}
         >
           {
             props.layout.map((keys, idx) => (
@@ -42,6 +36,7 @@ function Keyboard(props: {
                container
                spacing={2}
                size={12}
+                height={`[${100 / keys.length}%`}
                key={`[${keys}]-${idx}`}
                sx={{
                  display: 'flex',
