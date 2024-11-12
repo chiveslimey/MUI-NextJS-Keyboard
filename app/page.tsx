@@ -2,33 +2,10 @@
 
 import { useState } from 'react';
 import { styled } from '@mui/material/styles';
-import RawButton from '@mui/material/Button';
-import RawBox from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
 
-
-const Button = styled(RawButton)(({ theme }) => ({
-  color: "black",
-  backgroundColor: "white",
-  ...theme.typography.body2,
-  padding: theme.spacing(2),
-  textAlign: 'center',
-    
-  ...theme.applyStyles('dark', {
-    color: "white",
-    backgroundColor: '#6c6d6e',
-  }),
-}));
-
-const Box = styled(RawBox)(({ theme }) => ({
-  backgroundColor: "#d1d2d3",
-  ...theme.typography.body2,
-    
-  ...theme.applyStyles('dark', {
-    color: "white",
-    backgroundColor: '#6d6d6d',
-  }),
-}));
 
 function Keyboard(props: {
     layout: Array<Array<string>>,
@@ -37,7 +14,7 @@ function Keyboard(props: {
     return (
       <Box
        sx={{
-         bgcolor,
+         bgcolor: theme => theme.palette.mode === "light" ? "#d1d2d3": "#6d6d6d",
          position: 'fixed',
          height: '50vh',
          width: '100vw',
@@ -66,6 +43,12 @@ function Keyboard(props: {
                        variant="contained"
                        key={`btn-${key}-${idx}`}
                        fullWidth
+                       sx={{
+                         color: theme => theme.palette.mode === "light" ? "black" : "white",
+                         bgcolor: theme => theme.palette.mode === "light" ? "white" : "#6c6d6e",
+                         padding: theme => theme.spacing(2),
+                         textAlign: "center",
+                       }}
                       >
                         {key}
                       </Button>
