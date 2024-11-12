@@ -7,11 +7,12 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 export default function ColorSchemeManager() {
   const theme = useTheme();
+  const mode = useMediaQuery('(prefers-color-scheme: dark)') ? 'dark' : 'light';
   useEffect(
     () => { 
-      theme.palette.mode = useMediaQuery('(prefers-color-scheme: dark)') ? 'dark' : 'light'; 
+      theme.palette.mode = mode; 
     }, 
-    [useMediaQuery('(prefers-color-scheme: dark)'), theme],
+    [mode, theme],
   );
   return <Fragment></Fragment>;
 }
