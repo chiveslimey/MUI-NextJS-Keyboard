@@ -3,10 +3,8 @@ import { ReactNode } from 'react';
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 
-import useMediaQuery from '@mui/material/useMediaQuery';
-import CssBaseline from '@mui/material/CssBaseline';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
+import ColorSchemeManager from './ColorSchemeManager';
 
 import "./globals.css";
 
@@ -30,7 +28,9 @@ export default function Layout(props: { children: ReactNode }) {
     <html lang="ja">
       <body className={inter.className}>
         <AppRouterCacheProvider>
-          {props.children}
+          <ColorSchemeManager>
+            {props.children}
+          </ColorSchemeManager>
         </AppRouterCacheProvider>
       </body>
     </html>
