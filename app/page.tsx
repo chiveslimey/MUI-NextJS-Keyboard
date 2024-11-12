@@ -45,6 +45,7 @@ function Keyboard(props: {
                        sx={{
                          color: theme => theme.palette.mode === "light" ? "black" : "white",
                          bgcolor: theme => theme.palette.mode === "light" ? "white" : "#6c6d6e",
+                         padding: theme => theme.spacing(1),
                          textAlign: "center",
                          textTransform: "none",
                        }}
