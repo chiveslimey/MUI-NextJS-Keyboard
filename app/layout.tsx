@@ -28,9 +28,8 @@ export default function Layout(props: { children: ReactNode }) {
     <html lang="ja">
       <body className={inter.className}>
         <AppRouterCacheProvider>
-          <ColorSchemeManager>
-            {props.children}
-          </ColorSchemeManager>
+          <ColorSchemeManager />
+          {props.children}
         </AppRouterCacheProvider>
       </body>
     </html>
