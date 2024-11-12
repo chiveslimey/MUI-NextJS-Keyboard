@@ -11,12 +11,10 @@ function Keyboard(props: {
     layout: Array<Array<string>>,
     onKeyPress: (key: string) => void,
 }) {
-    const isLightMode = useMemo(() => !useMediaQuery('(prefers-color-scheme: dark)'), []);
-    
     return (
       <Box
        sx={{
-         bgcolor: isLightMode ? "#cccccc": "#6d6d6d",
+         bgcolor: theme.palette.mode === "light" ? "#cccccc": "#6d6d6d",
          position: 'fixed',
          height: '50vh',
          width: '100vw',
@@ -45,8 +43,8 @@ function Keyboard(props: {
                        key={`btn-${key}-${idx}`}
                        fullWidth
                        sx={{
-                         color: isLightMode ? "black" : "white",
-                         bgcolor: isLightMode ? "white" : "#6c6d6e",
+                         color: theme.palette.mode === "light" ? "black" : "white",
+                         bgcolor: theme.palette.mode === "light" ? "white" : "#6c6d6e",
                          padding: theme => theme.spacing(2),
                          textAlign: "center",
                          textTransform: "none",
