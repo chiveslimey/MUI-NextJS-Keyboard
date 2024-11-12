@@ -8,7 +8,7 @@ function MathExpression(props: { style?: string, children: string }) {
         __html: katex.renderToString(props.children)
     };
     return (
-        <span style={style}><div dangerouslySetInnerHTML={html} /></span>
+        <span style={props.style ?? ""}><div dangerouslySetInnerHTML={html} /></span>
     )
 }
 
