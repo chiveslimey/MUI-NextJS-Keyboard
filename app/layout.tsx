@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-import ColorSchemeManager from './ColorSchemeManager';
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import CssBaseLine from "@mui/material/CssBaseLine";
 
 import "./globals.css";
 
@@ -16,7 +17,13 @@ const inter = Noto_Sans_JP({
   variable: '--font-noto-sans-jp',
   display: 'swap',
   fallback: ['Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'sans-serif'],
-})
+});
+
+const theme = createTheme({
+  palette: {
+    mode: "light",
+  },
+});
 
 export const metadata: Metadata = {
   title: "Math Problem Generator",
@@ -28,8 +35,10 @@ export default function Layout(props: { children: ReactNode }) {
     <html lang="ja">
       <body className={inter.className}>
         <AppRouterCacheProvider>
-          <ColorSchemeManager />
-          {props.children}
+          <ThemeProvider theme={theme}>
+            <CssBaseline enableColorScheme />
+            {props.children}
+          </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
     </html>
