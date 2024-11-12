@@ -2,7 +2,7 @@
 
 import katex from 'katex';
 
-function MathExpression(props: { color?: "red" || "green", children: string }) {
+function MathExpression(props: { color?: "red" | "green", children: string }) {
     // TODO : implement highlighting invalid expressions
     const html = {
         __html: katex.renderToString(
