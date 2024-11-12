@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
+import CssBaseline from '@mui/material/CssBaseline';
 
 import "./globals.css";
 
@@ -29,7 +30,7 @@ export default function Layout(props: { children: ReactNode }) {
     <html lang="ja">
       <body className={inter.className}>
         <AppRouterCacheProvider>
-          
+            <CssBaseline enableColorScheme />
             {props.children}
           
         </AppRouterCacheProvider>
