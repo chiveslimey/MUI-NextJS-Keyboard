@@ -16,6 +16,6 @@ function MathExpression(props: { color?: "red" | "green", children: string }) {
 
 export default function App() {
     return (
-        <MathExpression>\frac{1}{2}</MathExpression>
+        <MathExpression>"\\frac{1}{2}"</MathExpression>
     )
 }
