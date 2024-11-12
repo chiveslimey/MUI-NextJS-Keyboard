@@ -45,7 +45,6 @@ function Keyboard(props: {
                        sx={{
                          color: theme => theme.palette.mode === "light" ? "black" : "white",
                          bgcolor: theme => theme.palette.mode === "light" ? "white" : "#6c6d6e",
-                         
                          textAlign: "center",
                        }}
                       >
@@ -64,12 +63,17 @@ function Keyboard(props: {
 
 export default function App() {
   const [msg, setMsg] = useState('');
+  const layout = [['Rad', 'I', '(', ')', '{bksp}'],
+ ['sin', 'π', '7', '8', '9', '÷'],
+ ['cos', 'e', '4', '5', '6', 'x'],
+ ['tan', '√', '1', '2', '3', '-'],
+ ['log', '^', '0', ',', '=', '+']];
   
   return (
     <div>
         <p>{msg}</p>
         <Keyboard 
-            layout={[['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i']]} 
+            layout={layout}
             onKeyPress={(key) => setMsg((prev) => prev + key)} 
         />
     </div>
