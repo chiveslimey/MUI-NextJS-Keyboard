@@ -69,7 +69,7 @@ export default function App() {
         ['d', 'e', 'f'],
         ['h', 'i', 'j'],
     ];
-    const callback = key: string => setText(prev => prev + key);
+    const callback = (key: string) => setText(prev => prev + key);
 
     return (
         <div>
