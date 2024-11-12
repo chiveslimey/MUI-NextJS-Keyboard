@@ -11,7 +11,14 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import "./globals.css";
 
 
-const inter = Inter({ subsets: ["latin"] , weight: ["400"] });
+const inter = Noto_Sans_JP({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  preload: false,
+  variable: '--font-noto-sans-jp',
+  display: 'swap',
+  fallback: ['Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'sans-serif'],
+})
 
 export const metadata: Metadata = {
   title: "Math Problem Generator",
