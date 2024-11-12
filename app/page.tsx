@@ -2,13 +2,15 @@
 
 import katex from 'katex';
 
-function MathExpression<Obj extends {}>(props: { style?: Obj, children: string }) {
+function MathExpression(props: { color?: "red" || "green", children: string }) {
     // TODO : implement highlighting invalid expressions
     const html = {
-        __html: katex.renderToString(props.children)
+        __html: katex.renderToString(
+            `\\textcolor{${color ?? "black"}}{${props.children}}`
+        ),
     };
     return (
-        <span style={props.style ?? {}}><div dangerouslySetInnerHTML={html} /></span>
+        <div dangerouslySetInnerHTML={html} />
     )
 }
 
