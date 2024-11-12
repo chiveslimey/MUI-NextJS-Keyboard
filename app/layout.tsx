@@ -18,11 +18,7 @@ const inter = Noto_Sans_JP({
   fallback: ['Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'sans-serif'],
 });
 
-const theme = createTheme({
-  palette: {
-    mode: "light",
-  },
-});
+
 
 export const metadata: Metadata = {
   title: "Math Problem Generator",
