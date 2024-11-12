@@ -1,7 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
-import useMediaQuery from '@mui/material/useMediaQuery';
+import { useState } from 'react';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
