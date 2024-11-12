@@ -25,29 +25,12 @@ export const metadata: Metadata = {
   description: "Generates random math problems.",
 };
 
-/* Switch between dark and light mode depending on the system default */
-function ColorScheme(props: { children: ReactNode }) {
-  const mode = useMediaQuery('(prefers-color-scheme: dark)') ? 'dark' : 'light';
-  const theme = createTheme({
-    palette: { mode },
-  });
-
-  return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      {props.children}
-    </ThemeProvider>
-  );
-}
-
 export default function Layout(props: { children: ReactNode }) {
   return (
     <html lang="ja">
       <body className={inter.className}>
         <AppRouterCacheProvider>
-          <ColorScheme>
-            {props.children}
-          </ColorScheme>
+          {props.children}
         </AppRouterCacheProvider>
       </body>
     </html>
