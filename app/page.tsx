@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
@@ -10,10 +11,12 @@ function Keyboard(props: {
     layout: Array<Array<string>>,
     onKeyPress: (key: string) => void,
 }) {
+    const isLightMode = useMemo(() => !useMediaQuery('(prefers-color-scheme: dark)'), []);
+    
     return (
       <Box
        sx={{
-         bgcolor: theme => theme.palette.mode === "light" ? "#cccccc": "#6d6d6d",
+         bgcolor: isLightMode ? "#cccccc": "#6d6d6d",
          position: 'fixed',
          height: '50vh',
          width: '100vw',
@@ -42,8 +45,8 @@ function Keyboard(props: {
                        key={`btn-${key}-${idx}`}
                        fullWidth
                        sx={{
-                         color: theme => theme.palette.mode === "light" ? "black" : "white",
-                         bgcolor: theme => theme.palette.mode === "light" ? "white" : "#6c6d6e",
+                         color: isLightMode ? "black" : "white",
+                         bgcolor: isLightMode ? "white" : "#6c6d6e",
                          padding: theme => theme.spacing(2),
                          textAlign: "center",
                          textTransform: "none",
