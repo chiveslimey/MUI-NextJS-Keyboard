@@ -13,7 +13,7 @@ function Keyboard(props: {
     return (
       <Box
        sx={{
-         bgcolor: theme.palette.mode === "light" ? "#cccccc": "#6d6d6d",
+         bgcolor: theme => theme.palette.mode === "light" ? "#cccccc": "#6d6d6d",
          position: 'fixed',
          height: '50vh',
          width: '100vw',
@@ -42,8 +42,8 @@ function Keyboard(props: {
                        key={`btn-${key}-${idx}`}
                        fullWidth
                        sx={{
-                         color: theme.palette.mode === "light" ? "black" : "white",
-                         bgcolor: theme.palette.mode === "light" ? "white" : "#6c6d6e",
+                         color: theme => theme.palette.mode === "light" ? "black" : "white",
+                         bgcolor: theme => theme.palette.mode === "light" ? "white" : "#6c6d6e",
                          padding: theme => theme.spacing(2),
                          textAlign: "center",
                          textTransform: "none",
