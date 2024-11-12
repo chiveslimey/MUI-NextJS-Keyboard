@@ -5,7 +5,7 @@ import { Noto_Sans_JP } from "next/font/google";
 
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import CssBaseLine from "@mui/material/CssBaseLine";
+import CssBaseline from "@mui/material/CssBaseLine";
 
 import "./globals.css";
 
