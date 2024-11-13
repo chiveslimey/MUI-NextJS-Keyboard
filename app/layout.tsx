@@ -3,10 +3,10 @@ import { ReactNode } from 'react';
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { useState, useEffect } from 'react';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
 import "./globals.css";
 
@@ -18,27 +18,33 @@ const inter = Noto_Sans_JP({
   variable: '--font-noto-sans-jp',
   display: 'swap',
   fallback: ['Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'sans-serif'],
-});
+})
 
 export const metadata: Metadata = {
   title: "Math Problem Generator",
   description: "Generates random math problems.",
 };
 
-const light = createTheme({palette: {mode: 'light'}});
-const dark = createTheme({palette: {mode: 'dark'}});
+const schemes = {};
 
-function ReactiveTheme(props: { children: ReactNode }) {
-  const preferred = useMediaQuery('(prefers-color-scheme: dark)') ? dark : light;
+/* Switch between dark and light mode depending on the system default */
+function ColorScheme(props: { children: ReactNode }) {
   const [scheme, setScheme] = useState('light');
-  if scheme !== preferred {
+  const preferred = useMediaQuery('(prefers-color-scheme: dark)') ? 'dark' : 'light';
+  if schemes[preferred] === undefined {
+    schemes[preferred] = createTheme({
+      palette: { preferred },
+    });
+  } else if preferred !== shceme {
     setScheme(preferred);
   }
 
   return (
-    <ThemeProvider theme={ preferred === 'light' ? light : dark }>
-      { props.children }
+    <ThemeProvider theme={schemes[preferred]}>
+      <CssBaseline enableColorScheme/>
+      {props.children}
     </ThemeProvider>
+  );
 }
 
 export default function Layout(props: { children: ReactNode }) {
@@ -46,9 +52,9 @@ export default function Layout(props: { children: ReactNode }) {
     <html lang="ja">
       <body className={inter.className}>
         <AppRouterCacheProvider>
-          <ReactiveTheme>
+          <ColorScheme>
             {props.children}
-          </ReactiveTheme>
+          </ColorScheme>
         </AppRouterCacheProvider>
       </body>
     </html>
