@@ -29,16 +29,12 @@ const schemes = {};
 
 /* Switch between dark and light mode depending on the system default */
 function ColorScheme(props: { children: ReactNode }) {
-  const [scheme, setScheme] = useState('light');
   const preferred = useMediaQuery('(prefers-color-scheme: dark)') ? 'dark' : 'light';
   if (schemes[preferred] === undefined) {
     schemes[preferred] = createTheme({
       palette: { preferred },
     });
-  } else if (preferred !== shceme) {
-    setScheme(preferred);
   }
-
   return (
     <ThemeProvider theme={schemes[preferred]}>
       <CssBaseline enableColorScheme/>
