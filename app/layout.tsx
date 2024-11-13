@@ -31,11 +31,11 @@ const schemes = {};
 function ColorScheme(props: { children: ReactNode }) {
   const [scheme, setScheme] = useState('light');
   const preferred = useMediaQuery('(prefers-color-scheme: dark)') ? 'dark' : 'light';
-  if schemes[preferred] === undefined {
+  if (schemes[preferred] === undefined) {
     schemes[preferred] = createTheme({
       palette: { preferred },
     });
-  } else if preferred !== shceme {
+  } else if (preferred !== shceme) {
     setScheme(preferred);
   }
 
