@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-import { useMediaQuery } from '@mui/material/useMediaQuery';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 import "./globals.css";
 
