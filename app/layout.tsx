@@ -4,9 +4,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-import CssBaseline from '@mui/material/CssBaseline';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import ColorScheme from './ColorScheme';
 
 import "./globals.css";
 
@@ -23,20 +21,6 @@ const inter = Noto_Sans_JP({
 export const metadata: Metadata = {
   title: "Math Problem Generator",
   description: "Generates random math problems.",
-};
-
- function ColorScheme(props: { children: React.ReactNode }) {
-  const mode = useMediaQuery('(prefers-color-scheme: dark)') ? 'dark' : 'light';
-  const theme = createTheme({
-    palette: { mode },
-  });
-
-  return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline enableColorScheme />
-      {props.children}
-    </ThemeProvider>
-  );
 };
 
 export default function Layout(props: { children: ReactNode }) {
