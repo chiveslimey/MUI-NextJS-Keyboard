@@ -5,6 +5,8 @@ import { Noto_Sans_JP } from "next/font/google";
 
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import CssBaseline from '@mui/material/CssBaseline';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import "./globals.css";
 
@@ -18,11 +20,23 @@ const inter = Noto_Sans_JP({
   fallback: ['Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'sans-serif'],
 });
 
-
-
 export const metadata: Metadata = {
   title: "Math Problem Generator",
   description: "Generates random math problems.",
+};
+
+ function ColorScheme(props: { children: React.ReactNode }) {
+  const mode = useMediaQuery('(prefers-color-scheme: dark)') ? 'dark' : 'light';
+  const theme = createTheme({
+    palette: { mode },
+  });
+
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline enableColorScheme />
+      {props.children}
+    </ThemeProvider>
+  );
 };
 
 export default function Layout(props: { children: ReactNode }) {
@@ -30,9 +44,9 @@ export default function Layout(props: { children: ReactNode }) {
     <html lang="ja">
       <body className={inter.className}>
         <AppRouterCacheProvider>
-            <CssBaseline enableColorScheme />
+          <ColorScheme>
             {props.children}
-          
+          </ColorScheme>
         </AppRouterCacheProvider>
       </body>
     </html>
