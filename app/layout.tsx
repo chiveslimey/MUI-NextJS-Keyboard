@@ -5,7 +5,7 @@ import { Noto_Sans_JP } from "next/font/google";
 
 import useMediaQuery from '@mui/material/useMediaQuery';
 import CssBaseline from '@mui/material/CssBaseline';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { Theme, ThemeProvider, createTheme } from '@mui/material/styles';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
 import "./globals.css";
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   description: "Generates random math problems.",
 };
 
-const schemes = {};
+const schemes: { ['light' | 'dark']: Theme } = {};
 
 /* Switch between dark and light mode depending on the system default */
 function ColorScheme(props: { children: ReactNode }) {
