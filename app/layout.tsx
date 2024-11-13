@@ -6,6 +6,7 @@ import { Noto_Sans_JP } from "next/font/google";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { useState, useEffect } from 'react';
 
 import "./globals.css";
 
@@ -24,18 +25,30 @@ export const metadata: Metadata = {
   description: "Generates random math problems.",
 };
 
+const light = createTheme({palette: {mode: 'light'}});
+const dark = createTheme({palette: {mode: 'dark'}});
+
+function ReactiveTheme(props: { children: ReactNode }) {
+  const preferred = useMediaQuery('(prefers-color-scheme: dark)') ? dark : light;
+  const [scheme, setScheme] = useState('light');
+  if scheme !== preferred {
+    setScheme(preferred);
+  }
+
+  return (
+    <ThemeProvider theme={ preferred === 'light' ? light : dark }>
+      { props.children }
+    </ThemeProvider>
+}
+
 export default function Layout(props: { children: ReactNode }) {
-  const light = createTheme({palette: {mode: 'light'}});
-  const dark = createTheme({palette: {mode: 'dark'}});
-  const theme = useMediaQuery('(prefers-color-scheme: dark)') ? dark : light;
-  
   return (
     <html lang="ja">
       <body className={inter.className}>
         <AppRouterCacheProvider>
-          <ThemeProvider theme={theme}>
+          <ReactiveTheme>
             {props.children}
-          </ThemeProvider>
+          </ReactiveTheme>
         </AppRouterCacheProvider>
       </body>
     </html>
