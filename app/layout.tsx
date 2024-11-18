@@ -3,9 +3,7 @@ import { ReactNode } from 'react';
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 
-import useMediaQuery from '@mui/material/useMediaQuery';
-import CssBaseline from '@mui/material/CssBaseline';
-import { Theme, ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
 import "./globals.css";
@@ -25,20 +23,17 @@ export const metadata: Metadata = {
   description: "Generates random math problems.",
 };
 
-const schemes: { ['light' | 'dark']: Theme } = {};
+const theme = createTheme({
+  colorSchemes: {
+    dark: true,
+  },
+});
 
 /* Switch between dark and light mode depending on the system default */
-function ColorScheme(props: { children: ReactNode }) {
-  const preferred = useMediaQuery('(prefers-color-scheme: dark)') ? 'dark' : 'light';
-  if (schemes[preferred] === undefined) {
-    schemes[preferred] = createTheme({
-      palette: { preferred },
-    });
-  }
+function ToggleColorMode(props: { children: ReactNode }) {
   return (
-    <ThemeProvider theme={schemes[preferred]}>
-      <CssBaseline enableColorScheme/>
-      {props.children}
+    <ThemeProvider theme={theme}>
+      { props.children }
     </ThemeProvider>
   );
 }
@@ -49,7 +44,7 @@ export default function Layout(props: { children: ReactNode }) {
       <body className={inter.className}>
         <AppRouterCacheProvider>
           <ColorScheme>
-            {props.children}
+            { props.children }
           </ColorScheme>
         </AppRouterCacheProvider>
       </body>
