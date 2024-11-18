@@ -30,7 +30,7 @@ const theme = createTheme({
 });
 
 /* Switch between dark and light mode depending on the system default */
-function ToggleColorMode(props: { children: ReactNode }) {
+function ColorScheme(props: { children: ReactNode }) {
   return (
     <ThemeProvider theme={theme}>
       { props.children }
