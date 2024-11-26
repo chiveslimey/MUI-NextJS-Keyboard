@@ -63,7 +63,6 @@ function Keyboard(props: {
 }
 
 export default function App() {
-    'use server';
     const [text, setText] = useState('');
     const layout = [
         ['a', 'b', 'c'],
