@@ -23,16 +23,10 @@ export const metadata: Metadata = {
   description: "Generates random math problems.",
 };
 
-const theme = createTheme({
-  colorSchemes: {
-    dark: true,
-  },
-});
-
 /* Switch between dark and light mode depending on the system default */
 function ColorScheme(props: { children: ReactNode }) {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider defaultMode='system' >
       { props.children }
     </ThemeProvider>
   );
