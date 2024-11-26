@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 };
 
 const theme = createTheme({
-  colorScheme: {
+  colorSchemes: {
     dark: true,
   },
 });
