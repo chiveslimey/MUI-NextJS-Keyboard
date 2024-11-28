@@ -2,8 +2,8 @@ import { ReactNode } from 'react';
 
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
-
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+/*
+import { ThemeProvider, createTheme } from '@mui/material/styles';*/
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
 import "./globals.css";
@@ -23,13 +23,14 @@ export const metadata: Metadata = {
   description: "Generates random math problems.",
 };
 
+/*
 const theme = createTheme({
   colorSchemes: {
     dark: true,
   },
 });
 
-/* Switch between dark and light mode depending on the system default */
+/* Switch between dark and light mode depending on the system default * /
 function ColorScheme(props: { children: ReactNode }) {
   return (
     <ThemeProvider theme={ theme } >
@@ -47,6 +48,16 @@ export default function Layout(props: { children: ReactNode }) {
             { props.children }
           </ColorScheme>
         </AppRouterCacheProvider>
+      </body>
+    </html>
+  );
+}
+*/
+export default function Layout(props: { children: ReactNode }) {
+  return (
+    <html lang='ja'>
+      <body className={inter.className}>
+        { props.children }
       </body>
     </html>
   );
