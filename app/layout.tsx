@@ -57,7 +57,9 @@ export default function Layout(props: { children: ReactNode }) {
   return (
     <html lang='ja'>
       <body className={inter.className}>
-        { props.children }
+        <AppRouterCachePovider>
+          { props.children }
+        </AppRouterCachePovider>
       </body>
     </html>
   );
