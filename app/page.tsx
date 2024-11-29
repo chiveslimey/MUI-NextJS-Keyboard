@@ -1,5 +1,3 @@
-'use client';
-
 import { useState } from 'react';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
@@ -10,6 +8,8 @@ function Keyboard(props: {
     layout: Array<Array<string>>,
     onKeyPress: (key: string) => void,
 }) {
+    'use client';
+    
     return (
       <Box
        sx={{
@@ -62,8 +62,8 @@ function Keyboard(props: {
   );
 }
 
-export default function App() {
-    'use server';
+function Content() {
+    'use client';
     
     const [text, setText] = useState('');
     const layout = [
@@ -82,4 +82,8 @@ export default function App() {
             />
         </div>
     );
+}
+
+export default function App() {
+    return <Content />
 }
