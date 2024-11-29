@@ -62,7 +62,9 @@ function Keyboard(props: {
   );
 }
 
-function Content() {
+export default function App() {
+    'use server';
+    
     const [text, setText] = useState('');
     const layout = [
         ['a', 'b', 'c'],
@@ -80,8 +82,4 @@ function Content() {
             />
         </div>
     );
-}
-
-export default function App() {
-    return <Content />
 }
