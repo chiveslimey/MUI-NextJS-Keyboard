@@ -70,7 +70,6 @@ export default function App() {
         ['h', 'i', 'j'],
     ];
     const callback = (key: string) => {
-        'use server';
         setText(prev => prev + key);
     };
 
