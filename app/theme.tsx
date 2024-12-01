@@ -13,7 +13,7 @@ const theme = createTheme({
     dark: {
       palette: {
         lightgray: '#6d6d6d',
-        invertableWhite: '#6c6d6e',
+        invertableWhite: '#737373',
       }
     },
   },
