@@ -25,7 +25,18 @@ export const metadata: Metadata = {
 
 const theme = createTheme({
   colorSchemes: {
-    dark: true,
+    light: {
+      palette: {
+        lightgray: '#cccccc',
+        invertableWhite: 'white',
+      }
+    },
+    dark: {
+      palette: {
+        lightgray: '#6d6d6d',
+        invertableWhite: '#6c6d6e',
+      }
+    },
   },
 });
 
