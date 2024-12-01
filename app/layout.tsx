@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 };
 
 declare module "@mui/material/styles" {
-  interface PaletteOptions {
+  interface Palette {
     lightgray: string,
     invertableWhite: string,
   }
