@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import createTheme from '@mui/material/styles/createTheme';
 
