@@ -14,7 +14,7 @@ import Theme from './theme';
  * @param props.onKeyPress
  *    キーが押された際の処理。
  */
-const Keyboard = memo(function(props: {
+const Keyboard = memo(function Keyboard(props: {
     layout: Array<Array<string>>,
     onKeyPress: (key: string) => void,
 }) {
