@@ -12,7 +12,7 @@ function Keyboard(props: {
 }) {
     return (
       <Box
-       sx={/* theme */ _ => ({
+       sx={/* theme => */({
          bgcolor: 'gray', //theme.palette.lightgray,
          position: 'fixed',
          height: '50vh',
@@ -41,7 +41,7 @@ function Keyboard(props: {
                        onClick={() => props.onKeyPress(key)}
                        key={`btn-${key}-${idx}`}
                        fullWidth
-                       sx={/*theme*/ _ => ({
+                       sx={/*theme => */({
                          color: 'black',//theme.palette.text.primary,
                          bgcolor: 'gray',//theme => theme.palette.invertableWhite,
                          padding: 8,//theme => theme.spacing(2),
