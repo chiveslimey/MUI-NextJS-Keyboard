@@ -22,6 +22,12 @@ export const metadata: Metadata = {
   description: "Generates random math problems.",
 };
 
+declare module "@mui/material/styles" {
+  interface PaletteOptions {
+    lightgray: string,
+    invertableWhite: string,
+  }
+}
 
 const theme = createTheme({
   colorSchemes: {
