@@ -12,13 +12,13 @@ function Keyboard(props: {
 }) {
     return (
       <Box
-       sx={{
-         bgcolor: 'lightgray',
+       sx={theme => ({
+         bgcolor: theme.palette.lightgray,
          position: 'fixed',
          height: '50vh',
          width: '100vw',
          bottom: 0,
-       }}
+       })}
       >
         <Grid 
          container
@@ -42,7 +42,7 @@ function Keyboard(props: {
                        key={`btn-${key}-${idx}`}
                        fullWidth
                        sx={theme => ({
-                         color: theme.text.primary,
+                         color: theme.palette.text.primary,
                          bgcolor: theme => theme.palette.invertableWhite,
                          padding: theme => theme.spacing(2),
                          textAlign: "center",
