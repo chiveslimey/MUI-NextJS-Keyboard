@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
+import Theme from './theme';
 
 
 function Keyboard(props: {
@@ -74,12 +75,12 @@ export default function App() {
     };
 
     return (
-        <div>
-            <p>{text}</p>
-            <Keyboard
-             layout={layout}
-             onKeyPress={callback}
-            />
-        </div>
+        <Theme>
+          <p>{text}</p>
+          <Keyboard
+           layout={layout}
+           onKeyPress={callback}
+          />
+        </Theme>
     );
 }
