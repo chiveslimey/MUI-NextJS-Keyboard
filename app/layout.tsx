@@ -6,6 +6,7 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import "./globals.css";
 
 
+// フォント
 const inter = Noto_Sans_JP({
   subsets: ['latin'],
   weight: ['400', '700'],
@@ -15,21 +16,10 @@ const inter = Noto_Sans_JP({
   fallback: ['Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'sans-serif'],
 })
 
+//　メタデータ
 export const metadata: Metadata = {
-  title: "Math Problem Generator",
-  description: "Generates random math problems.",
+  title: "Keyboard",
 };
-
-declare module "@mui/material/styles" {
-  interface Palette {
-    lightgray: string,
-    invertableWhite: string,
-  }
-  interface PaletteOptions {
-    lightgray?: string,
-    invertableWhite?: string,
-  }
-}
 
 export default function Layout(props: { children: ReactNode }) {
   return (

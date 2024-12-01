@@ -1,13 +1,20 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback, memo } from 'react';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
 import Theme from './theme';
 
-
-function Keyboard(props: {
+/**
+ * 
+ * キーボードコンポーネント
+ * @param props.layout 
+ *    キー配置。一列分のキー配置を表す配列をネストしたもの。
+ * @param props.onKeyPress
+ *    キーが押された際の処理。
+ */
+const Keyboard = memo(function(props: {
     layout: Array<Array<string>>,
     onKeyPress: (key: string) => void,
 }) {
@@ -21,6 +28,7 @@ function Keyboard(props: {
          bottom: 0,
        })}
       >
+        { /* キーボードに含まれる列のコンテナ */ }
         <Grid 
          container
          direction="column"
@@ -28,6 +36,7 @@ function Keyboard(props: {
          margin="5%"
         >
           {
+            // 列を生成
             props.layout.map((keys, idx) => (
               <Grid
                container
@@ -36,6 +45,7 @@ function Keyboard(props: {
                key={`[${keys}]-${idx}`}
               >
                 {
+                  // キーを生成
                   keys.map((key, idx) => (
                     <Grid size="grow" key={`${key}-${idx}`} >
                       <Button
@@ -61,25 +71,31 @@ function Keyboard(props: {
         </Grid>
     </Box>
   );
-}
+});
 
 export default function App() {
+    //　入力された文字列を保持するState
     const [text, setText] = useState('');
+
     const layout = [
         ['a', 'b', 'c'],
         ['d', 'e', 'f'],
         ['h', 'i', 'j'],
     ];
-    const callback = (key: string) => {
+    const onKeyPress = useCallback((key: string) => {
         setText(prev => prev + key);
-    };
+    }, [setText]);
 
+    /** 
+     * <Theme>をlayout.tsxに含めようとすると、SSRの過程でエラーが発生する
+     * Themeで使っているMUIのcreateTheme()関数は関数を返すため、サーバー側では使えないのが原因
+     */
     return (
         <Theme>
           <p>{text}</p>
           <Keyboard
            layout={layout}
-           onKeyPress={callback}
+           onKeyPress={onKeyPress}
           />
         </Theme>
     );
