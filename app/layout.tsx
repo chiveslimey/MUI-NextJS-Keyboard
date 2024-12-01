@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
-import createTheme from '@mui/material/createTheme';
+import createTheme from '@mui/material/styles/createTheme';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
 import "./globals.css";
