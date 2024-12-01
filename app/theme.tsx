@@ -1,7 +1,8 @@
 import { ReactNode } from 'react';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
 import createTheme from '@mui/material/styles/createTheme';
-  
+
+/* キーボードのキーなどに使う色　ダークモード対応 */
 const theme = createTheme({
   colorSchemes: {
     light: {
@@ -19,7 +20,7 @@ const theme = createTheme({
   },
 });
 
-/* Switch between dark and light mode depending on the system default */
+/* ダークモード対応 */
 export default function Theme(props: { children: ReactNode }) {
   return (
     <ThemeProvider theme={ theme } >
