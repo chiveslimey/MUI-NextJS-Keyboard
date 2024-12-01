@@ -6,14 +6,14 @@ const theme = createTheme({
   colorSchemes: {
     light: {
       palette: {
-        lightgray: '#cccccc',
+        lightgray: '#d0d3d9',
         invertableWhite: 'white',
       }
     },
     dark: {
       palette: {
-        lightgray: '#6d6d6d',
-        invertableWhite: '#737373',
+        lightgray: '#333333',
+        invertableWhite: '#7c7c7c',
       }
     },
   },
