@@ -1,9 +1,8 @@
 import { ReactNode } from 'react';
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
-import ThemeProvider from '@mui/material/styles/ThemeProvider';
-import createTheme from '@mui/material/styles/createTheme';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
+import Theme from './theme';
 
 import "./globals.css";
 
@@ -33,40 +32,14 @@ declare module "@mui/material/styles" {
   }
 }
 
-const theme = createTheme({
-  colorSchemes: {
-    light: {
-      palette: {
-        lightgray: '#cccccc',
-        invertableWhite: 'white',
-      }
-    },
-    dark: {
-      palette: {
-        lightgray: '#6d6d6d',
-        invertableWhite: '#6c6d6e',
-      }
-    },
-  },
-});
-
-/* Switch between dark and light mode depending on the system default */
-function ColorScheme(props: { children: ReactNode }) {
-  return (
-    <ThemeProvider theme={ theme } >
-      { props.children }
-    </ThemeProvider>
-  );
-}
-
 export default function Layout(props: { children: ReactNode }) {
   return (
     <html lang="ja">
       <body className={inter.className}>
         <AppRouterCacheProvider>
-          <ColorScheme>
+          <Theme>
             { props.children }
-          </ColorScheme>
+          </Theme>
         </AppRouterCacheProvider>
       </body>
     </html>
