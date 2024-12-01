@@ -6,7 +6,7 @@ import createTheme from '@mui/material/styles/createTheme';
 export default function Theme(props: { children: ReactNode }) {
   // createTheme cannot be mixed with Next.js's SSR
   const theme = useMemo(
-    createTheme({
+    () => createTheme({
       colorSchemes: {
         light: {
           palette: {
