@@ -27,6 +27,10 @@ declare module "@mui/material/styles" {
     lightgray: string,
     invertableWhite: string,
   }
+  interface PaletteOptions {
+    lightgray?: string,
+    invertableWhite?: string,
+  }
 }
 
 const theme = createTheme({
